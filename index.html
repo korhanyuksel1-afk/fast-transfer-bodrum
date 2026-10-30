@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fast Transfer Bodrum - Normal sedan, lüks sedan ve Mercedes Vito ile Bodrum'da hızlı transfer.">
+<title>Fast Transfer Bodrum</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#091724;color:white}
+header{padding:20px 6%;display:flex;justify-content:space-between;align-items:center;gap:12px;background:#091724}
+.logo{font-size:19px;font-weight:bold;letter-spacing:1px}
+.gold{color:#d6ad6b}
+button,.btn{cursor:pointer;background:#d6ad6b;color:#091724;border:0;padding:14px 20px;font-weight:bold;text-decoration:none;display:inline-block;border-radius:4px}
+.lang button{padding:8px;background:transparent;color:#d6ad6b;border:1px solid #d6ad6b}
+.hero{min-height:550px;padding:105px 7%;background:linear-gradient(90deg,#091724f2,#09172488),url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=1400') center/cover}
+h1{font-size:clamp(38px,7vw,72px);line-height:1.1;max-width:750px;margin:15px 0}
+.hero p{max-width:550px;font-size:18px;color:#e0e0e0}
+section{padding:75px 7%}
+h2{font-size:35px;margin:10px 0 30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:#142a3b;padding:30px;border-top:3px solid #d6ad6b;border-radius:5px}
+.card h3{color:#d6ad6b}
+.card p{line-height:1.7;color:#d3dce3}
+.contact{background:#102638}
+input,select,textarea{width:100%;padding:14px;margin:8px 0 15px;background:#fff;border:0;border-radius:4px;font:inherit}
+textarea{min-height:95px}
+form{max-width:570px}
+footer{text-align:center;padding:30px;color:#aaa}
+a{color:inherit}
+@media(max-width:600px){header{flex-wrap:wrap}.hero{padding-top:75px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">FAST <span class="gold">TRANSFER BODRUM</span></div>
+<div class="lang">
+<button onclick="changeLang('tr')">TR</button>
+<button onclick="changeLang('en')">EN</button>
+</div>
+</header>
+
+<div class="hero">
+<p class="gold" data-tr="BODRUM • HIZLI TRANSFER" data-en="BODRUM • FAST TRANSFERS">BODRUM • HIZLI TRANSFER</p>
+<h1 data-tr="Bodrum'da Anında Transfer" data-en="Instant Transfers in Bodrum">Bodrum'da Anında Transfer</h1>
+<p data-tr="Normal ve lüks sedan araçlarla hızlı ulaşım. Mercedes Vito ile özel transfer seçenekleri. Bodrum'da yolculuğunuz kolay başlasın." data-en="Fast transportation with standard and luxury sedans. Mercedes Vito private transfer options. Travel comfortably across Bodrum.">Normal ve lüks sedan araçlarla hızlı ulaşım. Mercedes Vito ile özel transfer seçenekleri. Bodrum'da yolculuğunuz kolay başlasın.</p>
+<a class="btn" href="#contact" data-tr="HEMEN TRANSFER İSTE" data-en="REQUEST A TRANSFER">HEMEN TRANSFER İSTE</a>
+</div>
+
+<section>
+<p class="gold" data-tr="HİZMETLERİMİZ" data-en="OUR SERVICES">HİZMETLERİMİZ</p>
+<h2 data-tr="Size Uygun Transfer" data-en="Your Transfer Options">Size Uygun Transfer</h2>
+<div class="cards">
+<div class="card">
+<h3 data-tr="01. Anında Sedan Transfer" data-en="01. On-Demand Sedan">01. Anında Sedan Transfer</h3>
+<p data-tr="Normal sedan araçlarla Bodrum'da hızlı ve pratik ulaşım. Araç müsaitliğine göre transfer talepleri." data-en="Fast and practical transportation in Bodrum with standard sedans, subject to vehicle availability.">Normal sedan araçlarla Bodrum'da hızlı ve pratik ulaşım. Araç müsaitliğine göre transfer talepleri.</p>
+</div>
+<div class="card">
+<h3 data-tr="02. Lüks Sedan Transfer" data-en="02. Luxury Sedan Transfer">02. Lüks Sedan Transfer</h3>
+<p data-tr="Konforlu lüks sedan araçlarla otel, marina, restoran ve özel adreslere transfer." data-en="Comfortable luxury sedan transfers to hotels, marinas, restaurants and private addresses.">Konforlu lüks sedan araçlarla otel, marina, restoran ve özel adreslere transfer.</p>
+</div>
+<div class="card">
+<h3 data-tr="03. Mercedes Vito" data-en="03. Mercedes Vito">03. Mercedes Vito</h3>
+<p data-tr="Aileler, gruplar ve özel yolculuklar için geniş ve konforlu Mercedes Vito transferi." data-en="Spacious and comfortable Mercedes Vito transfers for families, groups and private journeys.">Aileler, gruplar ve özel yolculuklar için geniş ve konforlu Mercedes Vito transferi.</p>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<p class="gold" data-tr="İLETİŞİM" data-en="CONTACT">İLETİŞİM</p>
+<h2 data-tr="Transfer Talebi Oluştur" data-en="Request Your Transfer">Transfer Talebi Oluştur</h2>
+<p data-tr="Bodrum'da hızlı transfer için bize WhatsApp üzerinden ulaşın." data-en="Contact us on WhatsApp for fast transfers in Bodrum.">Bodrum'da hızlı transfer için bize WhatsApp üzerinden ulaşın.</p>
+<p><strong>WhatsApp: 0530 355 60 08</strong></p>
+<form onsubmit="sendRequest(event)">
+<input id="name" required placeholder="Ad Soyad / Full Name">
+<input id="phone" type="tel" required placeholder="Telefon / Phone">
+<select id="vehicle">
+<option value="Normal Sedan">Normal Sedan / Standard Sedan</option>
+<option value="Lüks Sedan">Lüks Sedan / Luxury Sedan</option>
+<option value="Mercedes Vito">Mercedes Vito</option>
+</select>
+<textarea id="details" required placeholder="Tarih, saat, nereden nereye / Date, time, pickup and destination"></textarea>
+<button type="submit" data-tr="WHATSAPP İLE TALEP GÖNDER" data-en="SEND REQUEST VIA WHATSAPP">WHATSAPP İLE TALEP GÖNDER</button>
+</form>
+</section>
+
+<footer>
+FAST TRANSFER BODRUM<br>
+Bodrum, Türkiye<br>
+© <span id="year"></span>
+</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+function changeLang(lang){
+document.documentElement.lang=lang;
+document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+el.textContent=el.getAttribute('data-'+lang);
+});
+}
+function sendRequest(e){
+e.preventDefault();
+var message=
+'FAST TRANSFER BODRUM\n'+
+'Name: '+document.getElementById('name').value+'\n'+
+'Phone: '+document.getElementById('phone').value+'\n'+
+'Vehicle: '+document.getElementById('vehicle').value+'\n'+
+'Details: '+document.getElementById('details').value;
+window.open('https://wa.me/905303556008?text='+encodeURIComponent(message),'_blank');
+}
+</script>
+</body>
+</html>
