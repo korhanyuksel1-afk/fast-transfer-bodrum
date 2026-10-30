@@ -73,43 +73,24 @@ a{color:inherit}
 <h2 data-tr="Transfer Talebi Oluştur" data-en="Request Your Transfer">Transfer Talebi Oluştur</h2>
 <p data-tr="Bodrum'da hızlı transfer için bize WhatsApp üzerinden ulaşın." data-en="Contact us on WhatsApp for fast transfers in Bodrum.">Bodrum'da hızlı transfer için bize WhatsApp üzerinden ulaşın.</p>
 <p><strong>WhatsApp: 0530 355 60 08</strong></p>
-<form onsubmit="sendRequest(event)">
-<input id="name" required placeholder="Ad Soyad / Full Name">
-<input id="phone" type="tel" required placeholder="Telefon / Phone">
-<select id="vehicle">
-<option value="Normal Sedan">Normal Sedan / Standard Sedan</option>
-<option value="Lüks Sedan">Lüks Sedan / Luxury Sedan</option>
-<option value="Mercedes Vito">Mercedes Vito</option>
-</select>
-<textarea id="details" required placeholder="Tarih, saat, nereden nereye / Date, time, pickup and destination"></textarea>
-<button type="submit" data-tr="WHATSAPP İLE TALEP GÖNDER" data-en="SEND REQUEST VIA WHATSAPP">WHATSAPP İLE TALEP GÖNDER</button>
-</form>
-</section>
 
-<footer>
-FAST TRANSFER BODRUM<br>
-Bodrum, Türkiye<br>
-© <span id="year"></span>
-</footer>
+<div style="display:flex;flex-wrap:wrap;gap:15px;margin-top:25px">
 
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
-function changeLang(lang){
-document.documentElement.lang=lang;
-document.querySelectorAll('[data-'+lang+']').forEach(function(el){
-el.textContent=el.getAttribute('data-'+lang);
-});
-}
-function sendRequest(e){
-e.preventDefault();
-var message=
-'FAST TRANSFER BODRUM\n'+
-'Name: '+document.getElementById('name').value+'\n'+
-'Phone: '+document.getElementById('phone').value+'\n'+
-'Vehicle: '+document.getElementById('vehicle').value+'\n'+
-'Details: '+document.getElementById('details').value;
-window.open('https://wa.me/905303556008?text='+encodeURIComponent(message),'_blank');
-}
-</script>
-</body>
-</html>
+<a class="btn"
+href="tel:+905303556008"
+data-tr="📞 HEMEN ARA"
+data-en="📞 CALL NOW">
+📞 HEMEN ARA
+</a>
+
+<a class="btn"
+href="https://wa.me/905303556008"
+target="_blank"
+rel="noopener"
+data-tr="💬 WHATSAPP İLE MESAJ GÖNDER"
+data-en="💬 MESSAGE ON WHATSAPP">
+💬 WHATSAPP İLE MESAJ GÖNDER
+</a>
+
+</div>
+
