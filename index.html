@@ -348,6 +348,14 @@ function toggleMenu() {
   const isOpen = nav.classList.toggle('open');
   button.setAttribute('aria-expanded', String(isOpen));
 }
+
+document.querySelectorAll('header nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('header nav').classList.remove('open');
+    document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+  });
+});
+
 </script>
 </body>
 </html>
