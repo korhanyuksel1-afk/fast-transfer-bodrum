@@ -103,6 +103,27 @@ footer a[href^="tel:"] {
   }
 }
 
+.menu-toggle { display: none; }
+
+@media (max-width: 750px) {
+  .menu-toggle {
+    display: block;
+    background: #0b3155;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  header nav { display: none; }
+  header nav.open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+}
 </style>
 </head>
 <body>
@@ -112,6 +133,7 @@ footer a[href^="tel:"] {
 <button onclick="changeLang('tr')">TR</button>
 <button onclick="changeLang('en')">EN</button>
 </div>
+<button class="menu-toggle" onclick="toggleMenu()" aria-label="Menüyü aç" aria-expanded="false">☰</button>
 <nav aria-label="Site menüsü" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%;padding:12px 8px;">
 <a href="#" data-tr="Ana Sayfa" data-en="Home" style="color:#0b3155;text-decoration:none;padding:7px;">Ana Sayfa</a>
 <a href="#services" data-tr="Araçlarımız" data-en="Vehicles" style="color:#0b3155;text-decoration:none;padding:7px;">Araçlarımız</a>
@@ -285,6 +307,14 @@ document.documentElement.lang=lang;
 document.querySelectorAll('[data-'+lang+']').forEach(function(el){
 el.textContent=el.getAttribute('data-'+lang);
 });
+}
+</script>
+<script>
+function toggleMenu() {
+  const nav = document.querySelector('header nav');
+  const button = document.querySelector('.menu-toggle');
+  const isOpen = nav.classList.toggle('open');
+  button.setAttribute('aria-expanded', String(isOpen));
 }
 </script>
 </body>
